@@ -1,7 +1,7 @@
 # Pokemon Damage Calulator Website
 
 This is a website who's objetive is to calulate damages delt from one pokemon to another.
-NOTE : This website is made to consume the API I made in ASP.NET, you can find it [here]()
+NOTE : This website is made to consume the API I made in ASP.NET, you can find it [here](https://github.com/ShrayzzDev/Pokemon-API)
 
 # Technologies used
 
