@@ -17,7 +17,12 @@ async function onTextInputChanged(inputId, selectId) {
 }
 
 async function onDamagingTextInputChanged() {
-    await onTextInputChanged("pkmn_input", "pkmn_picker")
+    await onTextInputChanged("damaging_pkmn_input", "damaging_pkmn_picker")
 }
 
-document.getElementById("pkmn_input").addEventListener("input", onDamagingTextInputChanged)
+async function onTargetTextInputChanged() {
+    await onTextInputChanged("target_pkmn_input", "target_pkmn_picker")
+}
+
+document.getElementById("damaging_pkmn_input").addEventListener("input", onDamagingTextInputChanged)
+document.getElementById("target_pkmn_input").addEventListener("input", onTargetTextInputChanged)
