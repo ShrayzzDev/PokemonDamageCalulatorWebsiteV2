@@ -1,5 +1,6 @@
-import { CreatePkmnItemListDTOs } from "./DTO/Factory.js"
+import * as Factory from "./DTO/Factory.js"
 import { getPokemonList } from "./PokemonApiRequestor.js"
+import { moveListFromPokemon } from './MoveApiRequestor.js'
 
 async function onTextInputChanged(inputId, selectId) {
     await getPokemonList(
@@ -7,7 +8,7 @@ async function onTextInputChanged(inputId, selectId) {
         1,
         10,
         (text) => {
-        const pokemons = CreatePkmnItemListDTOs(text);
+        const pokemons = Factory.CreatePkmnItemListDTOs(text);
         let options = []
         for (let pokemon of pokemons) {
             options.push(`<option value=${pokemon.id}>${pokemon.name}</option>`)
@@ -26,3 +27,7 @@ async function onTargetTextInputChanged() {
 
 document.getElementById("damaging_pkmn_input").addEventListener("input", onDamagingTextInputChanged)
 document.getElementById("target_pkmn_input").addEventListener("input", onTargetTextInputChanged)
+
+await moveListFromPokemon(1,1,100, (response) => {
+    console.log(Factory.CreateMoveItemListDTOs(response))
+})

@@ -1,5 +1,3 @@
-import { CreatePkmnItemListDTOs } from './DTO/Factory.js';
-
 const API_URL = "https://localhost:7271"
 
 export async function getPokemonList(name, index, count, action) {
@@ -24,6 +22,8 @@ export async function getPokemonList(name, index, count, action) {
     }
 }
 
+// actually probably useless since I don't need details about a Pokémon atm
+// + it only logs
 async function getPokemon(id)
 {
     try {
