@@ -1,22 +1,8 @@
-const API_URL = "https://localhost:7271"
+import { GenericApiRequestor } from './GenericApiRequestor.js';
 
 export async function getPokemonList(name, index, count, action) {
     try {
-        const response = fetch(
-            `${API_URL}/pokemon/${name}/${index}/${count}`
-        );
-
-        response.then(
-            async resp => {
-                await resp.text().then(
-                    text => action(text))
-            }
-        ).catch(
-            error => {
-                console.log(error)
-            }
-        );
-
+        await GenericApiRequestor(`/pokemon/${name}/${index}/${count}`, action);
     } catch (error) {
         console.log(error.message);
     }
@@ -27,20 +13,7 @@ export async function getPokemonList(name, index, count, action) {
 async function getPokemon(id)
 {
     try {
-        const response = fetch(
-            `${API_URL}/pokemon/${id}`
-        );
-
-        response.then(
-            async resp => {
-                console.log(await resp.text());
-            }
-        ).catch(
-            error => {
-                console.log(error)
-            }
-        );
-
+        await GenericApiRequestor(`/pokemon/${id}`);
     } catch (error) {
         console.log(error.message);
     }
