@@ -6,7 +6,7 @@ NOTE : This website is made to consume the API I made in ASP.NET, you can find i
 # Technologies used
 
 <a href="https://skillicons.dev">
-  <img src="https://skillicons.dev/icons?i=php,js,html,css" />
+  <img src="https://skillicons.dev/icons?i=js,html,css" alt="Javascript, HTML and CSS"/>
 </a>  
   
 NOTE : Event though html and css are kinda obvious for a website, i am not exatly sure on what to use JS and PHP on. Might give one or another if I judge one of them useless.  
@@ -17,11 +17,13 @@ These are general and should not contain things like "model, DAL, DTO" or any to
 
 NOTE : This is obviously linked to the API advancement. If the site needs things the API is not doing at the moment, the website can't implment it either, and therefore I consider it does not make any sense to repeat it here.  
 
-| Functionality | Is it done yet ? | 
+| Functionality | Is it done yet ? |
 | --- | --- |
-| Get the list of available pokemon | :red_circle: |
-| Get moves a Pokemon can use | :red_circle: |
-| Send a request to get damages | :red_circle: |
+| Get the list of available pokemon | :white_check_mark: |
+| Show the list of available pokemon | :construction_worker: |
+| Get moves a Pokemon can use | :white_check_mark: |
+| Show moves a Pokemon can use | :red_circle: |
+| Send a request to get damages | :construction_worker: |
 | Show the result of the request | :red_circle: |
 | Being able to change between generations | :red_circle: |
 
