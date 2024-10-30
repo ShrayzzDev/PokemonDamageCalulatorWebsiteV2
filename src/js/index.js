@@ -1,9 +1,9 @@
 import * as Factory from "./DTO/Factory.js"
-import { getPokemonList } from "./PokemonApiRequestor.js"
-import { moveListFromPokemon } from './MoveApiRequestor.js'
+import { getPokemonList } from "./ApiRequestors/PokemonApiRequestor.js"
+import { moveListFromPokemon } from './ApiRequestors/MoveApiRequestor.js'
 import {DamageInformationsDTO} from "./DTO/DamageInformationsDTO.js";
 import {IvEvDTO} from "./DTO/IvEvDTO.js";
-import {calculateDamages} from "./DamageApiRequestor.js";
+import {calculateDamages} from "./ApiRequestors/DamageApiRequestor.js";
 
 async function onTextInputChanged(inputId, selectId) {
     await getPokemonList(
