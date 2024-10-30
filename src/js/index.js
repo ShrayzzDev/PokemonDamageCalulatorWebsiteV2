@@ -1,6 +1,9 @@
 import * as Factory from "./DTO/Factory.js"
 import { getPokemonList } from "./PokemonApiRequestor.js"
 import { moveListFromPokemon } from './MoveApiRequestor.js'
+import {DamageInformationsDTO} from "./DTO/DamageInformationsDTO.js";
+import {IvEvDTO} from "./DTO/IvEvDTO.js";
+import {calculateDamages} from "./DamageApiRequestor.js";
 
 async function onTextInputChanged(inputId, selectId) {
     await getPokemonList(
@@ -30,4 +33,29 @@ document.getElementById("target_pkmn_input").addEventListener("input", onTargetT
 
 await moveListFromPokemon(1,1,100, (response) => {
     console.log(Factory.CreateMoveItemListDTOs(response))
+})
+
+const parameters = new DamageInformationsDTO(
+    new IvEvDTO(
+        0,0,0,0,0,0,0
+    ),
+    new IvEvDTO(
+        0,0,0,0,0,0,0
+    ),
+    new IvEvDTO(
+        0,0,0,0,0,0,0
+    ),
+    new IvEvDTO(
+        0,0,0,0,0,0,0
+    ),
+    1,
+    1,
+    1,
+    1,
+    1,
+    true
+)
+
+await calculateDamages(parameters, 1, (response) => {
+    console.log(response)
 })
