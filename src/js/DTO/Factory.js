@@ -1,5 +1,6 @@
 import { PokemonItemListDTO } from "./PokemonItemListDTO.js";
 import { MoveDTO } from "./MoveDTO.js";
+import {DamageResultDTO} from "./DamageResult.js";
 
 function CreatePkmnItemListDTOs(strJson) {
     const json = JSON.parse(strJson);
@@ -15,4 +16,9 @@ function CreateMoveItemListDTOs(strJson) {
     )
 }
 
-export { CreatePkmnItemListDTOs, CreateMoveItemListDTOs };
+function CreateDamageResultDTO(strJson) {
+    const json = JSON.parse(strJson);
+    return new DamageResultDTO(json.minRoll, json.maxRoll);
+}
+
+export { CreatePkmnItemListDTOs, CreateMoveItemListDTOs, CreateDamageResultDTO };

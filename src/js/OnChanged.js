@@ -4,6 +4,7 @@ import {moveListFromPokemon} from "./ApiRequestors/MoveApiRequestor.js";
 import {DamageInformationsDTO} from "./DTO/DamageInformationsDTO.js";
 import {IvEvDTO} from "./DTO/IvEvDTO.js";
 import {calculateDamages} from "./ApiRequestors/DamageApiRequestor.js";
+import {CreateDamageResultDTO} from "./DTO/Factory.js";
 
 async function onTextInputChanged(inputId, selectId) {
     await getPokemonList(
@@ -36,7 +37,7 @@ async function onPokemonSelected(pokemonPickerId, pokemonLevelInputId, moveInput
     )
 }
 
-async function onDamageClicked(damagingPrefix, targetPrefix, damagingPickerId, targetPickerId, dmgLevelInputId, targetLevelInputId, moveInputId) {
+async function onDamageClicked(damagingPrefix, targetPrefix, damagingPickerId, targetPickerId, dmgLevelInputId, targetLevelInputId, moveInputId, resultId) {
     const parameters = new DamageInformationsDTO(
         new IvEvDTO(
             document.getElementById(damagingPrefix + "_hp_iv").value,
@@ -83,7 +84,8 @@ async function onDamageClicked(damagingPrefix, targetPrefix, damagingPickerId, t
     )
 
     await calculateDamages(parameters, 1, (response) => {
-        console.log(response)
+        const damages = CreateDamageResultDTO(response);
+        document.getElementById(resultId).innerHTML = `Minimum roll possible : ${damages.minRoll} <br> Maximum roll possible : ${damages.maxRoll} <br>`
     })
 }
 

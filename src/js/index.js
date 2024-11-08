@@ -16,7 +16,7 @@ async function onPokemonPicked() {
 }
 
 async function onDamageBtnClicked() {
-    await onDamageClicked("damaging", "target", "damaging_pkmn_picker", "target_pkmn_picker", "damaging_level", "target_level", "move_list")
+    await onDamageClicked("damaging", "target", "damaging_pkmn_picker", "target_pkmn_picker", "damaging_level", "target_level", "move_list", "damage_result")
 }
 
 document.getElementById("damaging_pkmn_input").addEventListener("input", onDamagingTextInputChanged)
