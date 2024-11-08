@@ -9,7 +9,7 @@ import {CreateDamageResultDTO} from "./DTO/Factory.js";
 async function onTextInputChanged(inputId, selectId) {
     await getPokemonList(
         document.getElementById(inputId).value,
-        1,
+        0,
         10,
         (text) => {
             const pokemons = Factory.CreatePkmnItemListDTOs(text);
