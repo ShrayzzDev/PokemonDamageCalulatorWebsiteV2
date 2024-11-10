@@ -14,6 +14,7 @@ async function onTextInputChanged(inputId, selectId) {
         (text) => {
             const pokemons = Factory.CreatePkmnItemListDTOs(text);
             let options = []
+            options.push('<option value="0">Select an option</option>')
             for (let pokemon of pokemons) {
                 options.push(`<option value=${pokemon.id}>${pokemon.name}</option>`)
             }
@@ -29,6 +30,7 @@ async function onPokemonSelected(pokemonPickerId, pokemonLevelInputId, moveInput
         (text) => {
             const moves = Factory.CreateMoveItemListDTOs(text);
             let options = [];
+            options.push('<option value="0">Select an option</option>')
             for (let move of moves) {
                 options.push(`<option value=${move.id}>${move.name}</option>`)
             }

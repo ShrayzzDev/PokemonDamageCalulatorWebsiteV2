@@ -1,52 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Title</title>
+	<meta charset="UTF-8">
+	<title>Damage Calculation</title>
+	<link rel="stylesheet" href="css/style.css"/>
 	<script src="js/index.js" type="module"></script>
 </head>
 <body>
-	<div id="damaging">
-		<label for="damaging_pkmn_input">Name a Pokémon</label>
-		<input id="damaging_pkmn_input" type="text"> <br>
-		<label for="damaging_pkmn_picker">Choose a Pokémon:</label>
-		<select id="damaging_pkmn_picker"></select>
-		<br>
-		<label for="damaging_level">Level of the Pokémon</label>
-		<input id="damaging_level" type="number" value="50" max="100"> <br>
-		<label for="move_list">Select a move to hit with: </label>
-		<select id="move_list"></select> <br>
-		<label for="damaging_hp_iv">HP IV</label> <input id="damaging_hp_iv" type="number" value="0" max="255"> <br>
-		<label for="damaging_hp_ev">HP EV</label> <input id="damaging_hp_ev" type="number" value="0" max="255"> <br>
-		<label for="damaging_attack_iv">Attack IV</label> <input id="damaging_attack_iv" type="number" value="0" max="255"> <br>
-		<label for="damaging_attack_ev">Attack EV</label> <input id="damaging_attack_ev" type="number" value="0" max="255"> <br>
-		<label for="damaging_defense_iv">Defense IV</label> <input id="damaging_defense_iv" type="number" value="0" max="255"> <br>
-		<label for="damaging_defense_ev">Defense EV</label> <input id="damaging_defense_ev" type="number" value="0" max="255"> <br>
-		<label for="damaging_special_iv">Special IV</label> <input id="damaging_special_iv" type="number" value="0" max="255"> <br>
-		<label for="damaging_special_ev">Special EV</label> <input id="damaging_special_ev" type="number" value="0" max="255"> <br>
-		<label for="damaging_speed_iv">Speed IV</label> <input id="damaging_speed_iv" type="number" value="0" max="255"> <br>
-		<label for="damaging_speed_ev">Speed EV</label> <input id="damaging_speed_ev" type="number" value="0" max="255"> <br>
-		<br>
+	<div class="main-block">
+		<div class="pokemon-block">
+			<div id="damaging" class="secondary-block">
+				<article>
+					<label for="damaging_pkmn_input">Name a Pokémon</label>
+					<input id="damaging_pkmn_input" type="text"> <br>
+				</article>
+				<article>
+					<label for="damaging_pkmn_picker">Choose a Pokémon:</label>
+					<select id="damaging_pkmn_picker"></select>
+				</article>
+				<br>
+				<article>
+					<label for="damaging_level">Level of the Pokémon</label>
+					<input id="damaging_level" type="number" value="50" max="100">
+				</article>
+				<article>
+					<label for="move_list">Select a move to hit with: </label>
+					<select id="move_list"></select>
+				</article>
+				<article>
+					<label for="damaging_hp_iv">HP IV</label>
+					<input id="damaging_hp_iv" type="number" value="0" max="255">
+				</article>
+				<article>
+					<label for="damaging_hp_ev">HP EV</label> *
+					<input id="damaging_hp_ev" type="number" value="0" max="255">
+				</article>
+				<article>
+					<label for="damaging_attack_iv">Attack IV</label>
+					<input id="damaging_attack_iv" type="number" value="0" max="255">
+				</article>
+				<article>
+					<label for="damaging_attack_ev">Attack EV</label>
+					<input id="damaging_attack_ev" type="number" value="0" max="255">
+				</article>
+				<article>
+					<label for="damaging_defense_iv">Defense IV</label>
+					<input id="damaging_defense_iv" type="number" value="0" max="255">
+				</article>
+				<article>
+					<label for="damaging_defense_ev">Defense EV</label>
+					<input id="damaging_defense_ev" type="number" value="0" max="255">
+				</article>
+				<article>
+					<label for="damaging_special_iv">Special IV</label>
+					<input id="damaging_special_iv" type="number" value="0" max="255">
+				</article>
+				<article>
+					<label for="damaging_special_ev">Special EV</label>
+					<input id="damaging_special_ev" type="number" value="0" max="255">
+				</article>
+				<article>
+					<label for="damaging_speed_iv">Speed IV</label>
+					<input id="damaging_speed_iv" type="number" value="0" max="255">
+				</article>
+				<article>
+					<label for="damaging_speed_ev">Speed EV</label>
+					<input id="damaging_speed_ev" type="number" value="0" max="255">
+				</article>
+				<br>
+			</div>
+			<div id="target" class="secondary-block">
+				<article>
+					<label for="target_pkmn_input">Name a Pokémon</label>
+					<input id="target_pkmn_input" type="text">
+				</article>
+				<article>
+					<label for="target_pkmn_picker">Choose a Pokémon:</label>
+					<select id="target_pkmn_picker"></select>
+				</article>
+				<article>
+					<label for="target_level">Level of the target Pokémon: </label>
+					<input id="target_level" type="number" value="50" max="100">
+				</article>
+				<article>
+					<label for="target_hp_iv">HP IV</label>
+					<input id="target_hp_iv" type="number" value="0" max="255">
+				</article>
+				<article>
+					<label for="target_hp_ev">HP EV</label>
+					<input id="target_hp_ev" type="number" value="0" max="255">
+				</article>
+				<article>
+					<label for="target_attack_iv">Attack IV</label>
+					<input id="target_attack_iv" type="number" value="0" max="255">
+				</article>
+				<article>
+					<label for="target_attack_ev">Attack EV</label>
+					<input id="target_attack_ev" type="number" value="0" max="255">
+				</article>
+				<article>
+					<label for="target_defense_iv">Defense IV</label>
+					<input id="target_defense_iv" type="number" value="0" max="255">
+				</article>
+				<article>
+					<label for="target_defense_ev">Defense EV</label>
+					<input id="target_defense_ev" type="number" value="0" max="255">
+				</article>
+				<article>
+					<label for="target_special_iv">Special IV</label>
+					<input id="target_special_iv" type="number" value="0" max="255">
+				</article>
+				<article>
+					<label for="target_special_ev">Special EV</label>
+					<input id="target_special_ev" type="number" value="0" max="255">
+				</article>
+				<article>
+					<label for="target_speed_iv">Speed IV</label>
+					<input id="target_speed_iv" type="number" value="0" max="255">
+				</article>
+				<article>
+					<label for="target_speed_ev">Speed EV</label>
+					<input id="target_speed_ev" type="number" value="0" max="255">
+				</article>
+				<br>
+			</div>
+		</div>
+		<button id="damage_button">Calculate</button>
+		<p id="damage_result"></p>
 	</div>
-	<div id="target">
-		<label for="target_pkmn_input">Name a Pokémon</label>
-		<input id="target_pkmn_input" type="text"> <br>
-		<label for="target_pkmn_picker">Choose a Pokémon:</label>
-		<select id="target_pkmn_picker"></select> <br>
-		<label for="target_level">Level of the target Pokémon: </label><input id="target_level" type="number" value="50" max="100"> <br>
-		<label for="target_hp_iv">HP IV</label> <input id="target_hp_iv" type="number" value="0" max="255"> <br>
-		<label for="target_hp_ev">HP EV</label> <input id="target_hp_ev" type="number" value="0" max="255"> <br>
-		<label for="target_attack_iv">Attack IV</label> <input id="target_attack_iv" type="number" value="0" max="255"> <br>
-		<label for="target_attack_ev">Attack EV</label> <input id="target_attack_ev" type="number" value="0" max="255"> <br>
-		<label for="target_defense_iv">Defense IV</label> <input id="target_defense_iv" type="number" value="0" max="255"> <br>
-		<label for="target_defense_ev">Defense EV</label> <input id="target_defense_ev" type="number" value="0" max="255"> <br>
-		<label for="target_special_iv">Special IV</label> <input id="target_special_iv" type="number" value="0" max="255"> <br>
-		<label for="target_special_ev">Special EV</label> <input id="target_special_ev" type="number" value="0" max="255"> <br>
-		<label for="target_speed_iv">Speed IV</label> <input id="target_speed_iv" type="number" value="0" max="255"> <br>
-		<label for="target_speed_ev">Speed EV</label> <input id="target_speed_ev" type="number" value="0" max="255"> <br>
-		<br>
-	</div>
-	<button id="damage_button">Calculate</button>
-	<p id="damage_result"></p>
 </body>
 </html>

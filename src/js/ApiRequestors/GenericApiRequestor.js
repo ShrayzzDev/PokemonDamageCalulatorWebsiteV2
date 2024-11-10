@@ -18,7 +18,6 @@ async function GenericApiRequestor(route, callback) {
 
 async function GenericApiRequestorWithBody(route, callback, body) {
     const url = `${API_URL}${route}`;
-    console.log(JSON.stringify(body))
     const response = fetch(url, {
         method: "POST",
         body: JSON.stringify(body),
