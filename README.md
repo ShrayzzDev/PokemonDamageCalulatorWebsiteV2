@@ -5,6 +5,8 @@ For the moment, let's say the website is functionnal. It works, yes, but it's in
 The objective is to have something at least readable, not a masterpiece in UX/UI, it is not really my cup of tea.
 NOTE : This website is made to consume the API I made in ASP.NET, you can find it [here](https://github.com/ShrayzzDev/Pokemon-API)
 
+The website is currently deployed (here)[shrayzz.fr/Calculator] !  
+  
 # Technologies used
 
 <a href="https://skillicons.dev">
